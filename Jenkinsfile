@@ -1,15 +1,15 @@
+
 pipeline {
     agent any
     parameters {
-        choice(name: 'DEPLOY_ENV', choices: ['INT', 'STAGE', 'TEST','PROD'],  description: 'The target environment to deploy artifacts')
+        choice(name: 'DEPLOY_ENV', choices: ['int', 'stage', 'prod'],  description: 'The target environment to deploy artifacts')
     }
-    
-    stages {
+    stages {       
         stage('Building project, running tests and publishing test results') {
             agent { 
                 docker{ image 'vincefra/docker:latest'}
-            } 
-           steps {
+            }   
+            steps {
                 sh 'mvn clean install'
             }
             post {
@@ -29,6 +29,6 @@ pipeline {
                     archive "target/calc-jsf-1.0.war"
                 }
             } 
-        } 
+        }         
     }
 }
