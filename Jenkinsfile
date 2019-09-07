@@ -11,7 +11,7 @@ pipeline {
             }   
             steps {		
                  sh 'echo "Cleaning tests.."'
-                 sh  'mvn clean test'
+                 sh 'mvn clean install test'
              }
             post {
                 always {            
