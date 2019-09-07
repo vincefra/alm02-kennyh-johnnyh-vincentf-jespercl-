@@ -20,7 +20,7 @@ pipeline {
                     allowMissing          : false,
                     alwaysLinkToLastBuild : false,
                     keepAll               : true,
-                    reportDir             : 'target/',
+                    reportDir             : 'target/site/jacoco/',
                     reportFiles           : 'index.html',
                     reportTitles          : "Tests coverage",
                     reportName            : "Tests coverage"
@@ -31,13 +31,5 @@ pipeline {
                 }
             } 
         }   
-        
-       stage('Deploying artifacts to selected target'){
-            agent any
-            steps{
-                sh 'export PATH=/opt/glassfish-4.1.1/bin/asadmin:$PATH'
-                sh 'asadmin --port 4848 deploy --force --name FortuneTellingMaven-${DEPLOY_ENV} --contextroot FortuneTellingMaven-${DEPLOY_ENV} target/FortuneTellingMaven-1.0.war'
-            }
-        } 
     }
 }
