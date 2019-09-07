@@ -6,8 +6,11 @@ pipeline {
     
     stages {
         stage('Building project, running tests and publishing test results') {
-            steps {
-                echo 'Building..'
+            agent { 
+                docker{ image 'vincefra/docker:latest'}
+            } 
+           steps {
+                sh 'mvn clean install'
             }
         }
     }
