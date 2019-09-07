@@ -7,7 +7,7 @@ pipeline {
     stages {       
         stage('Building project, running tests and publishing test results') {
             agent { 
-                docker{ image 'rasilva1986/java-maven:alm'}
+                docker{ image 'vincefra/docker:latest'}
             }   
             steps {
                 sh 'mvn clean install'
