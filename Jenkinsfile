@@ -10,7 +10,7 @@ pipeline {
                 docker{ image 'vincefra/docker:latest'}
             }   
             steps {		
-                 
+                 sh 'echo "Testing.."'
              }
             post {
                 always {            
