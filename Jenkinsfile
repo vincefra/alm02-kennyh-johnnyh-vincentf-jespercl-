@@ -9,9 +9,6 @@ pipeline {
             agent { 
                 docker{ image 'vincefra/docker:latest'}
             }   
-            steps {
-                sh 'mvn clean install'
-            }
             post {
                 always {            
                     junit 'target/surefire-reports/*.xml'
