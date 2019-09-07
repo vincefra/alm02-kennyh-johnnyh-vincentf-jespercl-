@@ -20,6 +20,7 @@ public class TranslatorTest {
     
     @Test
     public void test1(){
+        
         answerList.add("test");
         LOG.log(Level.INFO, "Testing the method of array size, if adding works correctly - size:" + answerList.size());
         assertEquals(answerList.size(), 1);
