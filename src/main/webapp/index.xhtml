@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg"></img>
+        <f:view>
+            
+            <h:form>
+                Name
+                <h:inputText value="#{fortuneTeller.name}">
+                        </h:inputText> <br/>
+                Lastname
+                        <h:inputText value="#{fortuneTeller.lastname}">
+                        </h:inputText> <br/>
+                Gender
+                        <h:inputText value="#{fortuneTeller.gender}">
+                        </h:inputText> <br/>
+                
+                        <h:commandButton action="#{fortuneTeller.generateAnswer}" value="Submit"></h:commandButton>
+            </h:form> 
+        </f:view>
+
+    </h:body>
+</html>
+
