@@ -27,7 +27,7 @@ pipeline {
                     ])
                 }
                 success {
-                    archive "target/calc-jsf-1.0.war"
+                    archive "target/FortuneTellingMaven-1.0.war"
                 }
             } 
         }         
