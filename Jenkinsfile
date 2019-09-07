@@ -30,6 +30,14 @@ pipeline {
                     archive "target/FortuneTellingMaven-1.0-SNAPSHOT.war"
                 }
             } 
-        }   
+        } 
+                 
+       stage('Deploying artifacts to selected target'){
+            agent any
+            steps{
+                sh 'export PATH=/opt/glassfish-4.1.1/bin/asadmin:$PATH'
+                sh 'asadmin --port 4848 deploy --force --name FortuneTellingMaven-${DEPLOY_ENV} --contextroot FortuneTellingMaven-${DEPLOY_ENV} target/FortuneTellingMaven-1.0-SNAPSHOT.war'
+            }
+        } 
     }
 }
