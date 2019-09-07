@@ -19,7 +19,7 @@ pipeline {
                     allowMissing          : false,
                     alwaysLinkToLastBuild : false,
                     keepAll               : true,
-                    reportDir             : '/',
+                    reportDir             : 'target/',
                     reportFiles           : 'index.html',
                     reportTitles          : "Tests coverage",
                     reportName            : "Tests coverage"
