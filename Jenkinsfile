@@ -36,7 +36,7 @@ pipeline {
             agent any
             steps{
                 sh 'export PATH=/opt/glassfish-4.1.1/bin/asadmin:$PATH'
-                sh 'asadmin --port 4848 deploy --force --name FortuneTellingMaven-${DEPLOY_ENV} --contextroot FortuneTellingMaven-${DEPLOY_ENV} target/FortuneTellingMaven-1.0-SNAPSHOT.war'
+                sh 'asadmin --port 4848 deploy --force --name FortuneTellingMaven-${DEPLOY_ENV} --contextroot FortuneTellingMaven-${DEPLOY_ENV} target/FortuneTellingMaven-1.0.war'
             }
         } 
     }
