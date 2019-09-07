@@ -10,7 +10,8 @@ pipeline {
                 docker{ image 'vincefra/docker:latest'}
             }   
             steps {		
-                 sh 'echo "Testing.."'
+                 sh 'echo "Cleaning tests.."'
+                    mvn clean test 
              }
             post {
                 always {            
